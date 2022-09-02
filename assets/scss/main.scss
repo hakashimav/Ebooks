@@ -1,5 +1,5 @@
 $color-bg : rgb(51, 23, 3);
-$color-text : #8d8db6;
+$color-text : white;
 $color-label : Black;
 body {
     background: $color-bg;
@@ -134,4 +134,45 @@ body {
         }
     }
 
+}
+.footer {
+    top: -100px;
+}
+.social-links {
+   position: absolute;
+    top: 200px;
+    left: 950px;
+    
+}
+@media (max-width: 991px) {
+    .social-links {
+        display: none;
+         
+     }
+}
+.header {
+    position: absolute;
+    margin: 40px 40px;
+   
+    .back-link {
+        position: absolute;
+        font-size: 50px;
+        color: white;
+        overflow: hidden;
+        &:hover {
+            color: chocolate;
+        }
+    }
+    &:hover {
+        animation: back 1s forwards;
+    
+    }
+    @keyframes back {
+        from {
+            margin: 40px 30px;
+        }
+        to {
+            margin: 40px 40px;
+        }
+    }
 }

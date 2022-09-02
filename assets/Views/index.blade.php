@@ -22,7 +22,7 @@
             <li><a class="nav-link scrollto" href="pages/blog.blade.php">blog</a></li>
             <li><a class="nav-link scrollto" href="pages/pricing.blade.php">pricing</a></li>
             <li><a class="nav-link scrollto" href="pages/contact.blade.php">Contact</a></li>
-            <li><a class="getstarted scrollto" href="#">Rejoigne-nous</a></li>
+            <li><a class="getstarted scrollto" href="../../forms/registre.blade.php">Rejoigne-nous</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -36,7 +36,7 @@
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Votre Nouvelle Bibliothèque en ligne</h1>
       <h2>Une bibliothèque, c'est le carrefour de tous les rêves de l'humanité</h2>
-      <a href="#" class="btn-get-started scrollto">Rejoignez-nous</a>
+      <a href="../../forms/registre.blade.php" class="btn-get-started scrollto">Rejoignez-nous</a>
     </div>
   </section><!-- End Hero -->
 

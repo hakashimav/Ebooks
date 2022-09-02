@@ -43,7 +43,13 @@
     </head>
 
     <body>
-        
+        <header>
+            <div class="header">
+                <a href="../assets/Views/index.blade.php" class="back-link">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+            </div>
+        </header>
         <div class="grid-container-fluid">
             <div class="container">
                 <label class="label" for="" data-aos="fade-in" >S'inscrire</label>
@@ -106,7 +112,26 @@
             </div>
             
         </div>
+        
+        <footer id="footer" class="footer">
+            <div class="me-md-auto text-center text-md-start">  
+                <div class="copyright">
+                  &copy; Copyright <strong><span>Bibliothèque en ligne</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                  Designed by <a href="https://bootstrapmade.com/">MichMav</a>
+                </div>
+              </div>
+              <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
 
+        </footer>
 
         <!-- Vendor JS Files -->
         <script src="../assets/vendor/aos/aos.js"></script>
