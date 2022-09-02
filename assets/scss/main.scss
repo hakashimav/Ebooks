@@ -53,6 +53,41 @@ body {
             top: -10px;
         }
     }
+    @media (max-width: 991px) {
+        &::before {
+            content: none;
+        }
+        .label {
+            
+            color: $color-text;
+            font-size: 50px;
+            font-family: 'AR techn';
+            margin: 0px 20px;
+            top: -20px;
+            // create the line
+            &::before {
+                content: '';
+                border: 1px solid chocolate;
+            }
+        }
+        form {
+             .name {
+                 width: 300px;
+             }
+             .adr {
+                 width: 300px;
+                 resize: none;
+             }
+             .date {
+                 width: 300px;
+                 
+             }
+             button {
+                top: -40px;
+                margin-top: 20px;
+             }
+         }
+    }
 }
 .other {
     position: absolute;
@@ -84,4 +119,19 @@ body {
         border-radius: 20px;
         
     }
+}
+@media (max-width: 991px) {
+    .other {
+        position: absolute;
+        margin-left: 20vw;
+        top: 120vh;
+        &::before {
+            position: absolute;
+            content :'';
+            border: 1px solid chocolate;
+            width: 370px;
+            left: -30px;
+        }
+    }
+
 }

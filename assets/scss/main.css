@@ -56,6 +56,37 @@ body {
   top: -10px;
 }
 
+@media (max-width: 991px) {
+  .container::before {
+    content: none;
+  }
+  .container .label {
+    color: #8d8db6;
+    font-size: 50px;
+    font-family: 'AR techn';
+    margin: 0px 20px;
+    top: -20px;
+  }
+  .container .label::before {
+    content: '';
+    border: 1px solid chocolate;
+  }
+  .container form .name {
+    width: 300px;
+  }
+  .container form .adr {
+    width: 300px;
+    resize: none;
+  }
+  .container form .date {
+    width: 300px;
+  }
+  .container form button {
+    top: -40px;
+    margin-top: 20px;
+  }
+}
+
 .other {
   position: absolute;
   margin-left: 69vw;
@@ -89,5 +120,20 @@ body {
   top: 38px;
   padding: 5px;
   border-radius: 20px;
+}
+
+@media (max-width: 991px) {
+  .other {
+    position: absolute;
+    margin-left: 20vw;
+    top: 120vh;
+  }
+  .other::before {
+    position: absolute;
+    content: '';
+    border: 1px solid chocolate;
+    width: 370px;
+    left: -30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
