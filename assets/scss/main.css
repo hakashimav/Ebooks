@@ -1,0 +1,93 @@
+body {
+  background: #331703;
+}
+
+.container {
+  position: absolute;
+  margin: 100px 50px;
+}
+
+.container .label {
+  position: relative;
+  color: #8d8db6;
+  font-size: 50px;
+  font-family: 'AR techn';
+  margin: 0px 250px;
+  top: -40px;
+}
+
+.container .label::before {
+  content: '';
+  border: 1px solid chocolate;
+}
+
+.container::before {
+  content: '';
+  border: 2px solid chocolate;
+  float: right;
+  margin-right: 300px;
+  height: 500px;
+}
+
+.container form {
+  position: relative;
+}
+
+.container form .name {
+  width: 350px;
+  margin: 10px 20px;
+}
+
+.container form .adr {
+  width: 745px;
+  margin: 0px 20px;
+  resize: none;
+}
+
+.container form .date {
+  width: 745px;
+  margin: 0px 20px;
+}
+
+.container form button {
+  position: relative;
+  width: 250px;
+  margin: 0px 60px;
+  top: -10px;
+}
+
+.other {
+  position: absolute;
+  margin-left: 69vw;
+  top: 35vh;
+}
+
+.other .Vous {
+  font-size: 25px;
+}
+
+.other .badge {
+  background: red;
+  font-size: 16px;
+  width: 330px;
+}
+
+.other .badge::before {
+  position: absolute;
+  content: '';
+  border: 1px solid white;
+  margin-left: -15px;
+  height: 28px;
+  top: 38px;
+}
+
+.other .icon {
+  position: absolute;
+  background: white;
+  color: red;
+  margin: 0px -50px;
+  top: 38px;
+  padding: 5px;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=main.css.map */
