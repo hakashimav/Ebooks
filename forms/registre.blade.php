@@ -106,13 +106,46 @@
             </div>
             <div class="other" data-aos="fade-in">
                 <label for="" class="Vous">Vous Pouvez vous connectez</label><br>
-                <a href="#" class="badge badge-primary">
+                <a href="#" class="badge badge-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                  <i class="fa fa-google icon"></i> avec votre compter Google
                 </a>
             </div>
             
         </div>
-        
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Se Connecter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              <div id="emailHelp" class="form-text">Nous ne partegerons jamais votre e-mail avec quelqu'un d'autre.</div>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Se rappeler de moi</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Connecter</button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer id="footer" class="footer">
             <div class="me-md-auto text-center text-md-start">  
                 <div class="copyright">
