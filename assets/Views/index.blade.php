@@ -15,12 +15,10 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-            <li><a class="nav-link scrollto" href="pages/about.blade.php">About</a></li>
-            <li><a class="nav-link scrollto" href="pages/services.blade.php">Services</a></li>
+            <li><a class="nav-link scrollto active" href="index.html">Home</a></liServices</a></li>
             <li><a class="nav-link scrollto " href="pages/portfolio.blade.php">Portfolio</a></li>
             <li><a class="nav-link scrollto" href="pages/blog.blade.php">blog</a></li>
-            <li><a class="nav-link scrollto" href="pages/pricing.blade.php">pricing</a></li>
+            <li><a class="nav-link scrollto" href="pages/pricing.blade.php">Abonnement</a></li>
             <li><a class="nav-link scrollto" href="pages/contact.blade.php">Contact</a></li>
             <li><a class="getstarted scrollto" href="../../forms/connect.blade.php">Rejoigne-nous</a></li>
           </ul>
@@ -36,7 +34,9 @@
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Votre Nouvelle Bibliothèque en ligne</h1>
       <h2>Une bibliothèque, c'est le carrefour de tous les rêves de l'humanité</h2>
-      <a href="../../forms/connect.blade.php" class="btn-get-started scrollto">Rejoignez-nous</a>
+      <a href="../../forms/connect.blade.p>
+            <li><a class="nav-link scrollto" href="pages/about.blade.php">About</a></li>
+            <li><a class="nav-link scrollto" href="pages/services.blade.php">hp" class="btn-get-started scrollto">Rejoignez-nous</a>
     </div>
   </section><!-- End Hero -->
 

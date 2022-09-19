@@ -1160,12 +1160,22 @@ section {
   text-align: center;
 }
 
-.pricing .featured .btn-buy {
+.pricing .featured .btn-buys {
+  background: transparent;
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 10px 40px 12px 40px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.pricing .featured .btn-buy:hover {
+.pricing .featured .btn-buys:hover {
   color: #f03c02;
   background: #fff;
   border-color: #fff;
@@ -1204,6 +1214,18 @@ section {
 .cta-pricing .cta-btn:hover {
   background: #f03c02;
   color: #fff;
+}
+/*==============================================================
+# Princing form
+================================================================*/
+.form-princing select{
+  background: transparent;
+  font-size: 1.75em;
+  font-weight: 600;
+  border: none;
+  pointer-events: none;
+  appearance: none;
+  
 }
 
 /*--------------------------------------------------------------
@@ -2032,6 +2054,7 @@ section {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
+  outline: none;
 }
 
 #footer .footer-newsletter form input[type=submit] {
