@@ -39,8 +39,8 @@
   </head>
   <body>
     <div class="box" data-aos="fade-up">
-      <a href="../assets/Views/index.blade.php" class="links-home">
-        <img src="../assets/img/home.png" alt="" class="img-home">
+      <a href="../assets/Views/index.blade.php" class="links-home" title="Accueil">
+        <img src="../assets/img/home.png" alt="homr" class="img-home">
       </a>
       <div class="form">
         <h2>S'identifier</h2>
