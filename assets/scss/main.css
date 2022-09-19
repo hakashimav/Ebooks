@@ -1,5 +1,5 @@
 body {
-  background: #331703;
+  background: #1c1c1c;
 }
 
 .container {
@@ -18,12 +18,14 @@ body {
 
 .container .label::before {
   content: '';
-  border: 1px solid chocolate;
+  border: 1px solid whitesmoke;
+  opacity: 0.8;
 }
 
 .container::before {
   content: '';
-  border: 2px solid chocolate;
+  border: 2px solid whitesmoke;
+  opacity: 0.8;
   float: right;
   margin-right: 300px;
   height: 500px;
@@ -69,7 +71,7 @@ body {
   }
   .container .label::before {
     content: '';
-    border: 1px solid chocolate;
+    border: 1px solid whitesmoke;
   }
   .container form .name {
     width: 300px;
@@ -131,7 +133,7 @@ body {
   .other::before {
     position: absolute;
     content: '';
-    border: 1px solid chocolate;
+    border: 1px solid whitesmoke;
     width: 370px;
     left: -30px;
   }
@@ -166,7 +168,8 @@ body {
 }
 
 .header .back-link:hover {
-  color: chocolate;
+  color: whitesmoke;
+  opacity: 0.8;
 }
 
 .header:hover {
@@ -194,7 +197,19 @@ body {
 
 /*
 ===========================================================
-    Customers Registre or connect
+    Customers the other form for Google compte
 ===========================================================
 */
+.modal-content {
+  background: #1c1c1c;
+  width: 450px;
+}
+
+.modal-content h5 {
+  color: whitesmoke;
+}
+
+.modal-content label {
+  color: whitesmoke;
+}
 /*# sourceMappingURL=main.css.map */

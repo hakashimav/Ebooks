@@ -32,7 +32,7 @@
         <link href="../assets/css/style.css" rel="stylesheet">
         
         <!-- the style customers -->
-        <link rel="stylesheet" href="../assets/scss/main.css">
+        <link rel="stylesheet" href="../assets/scss/main.Css">
     
         <!-- =======================================================
         * Template Name: Flattern - v4.8.0
@@ -45,7 +45,7 @@
     <body>
         <header>
             <div class="header">
-                <a href="../assets/Views/index.blade.php" class="back-link">
+                <a href="connect.blade.php" class="back-link">
                     <i class="fa fa-arrow-left"></i>
                 </a>
             </div>
@@ -56,13 +56,13 @@
                 <form action="" data-aos="fade-up">
                     <div class="form-group">
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Nom">
+                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Nom" required="required">
                             <div class="invalid-feedback">
                                 Validation message
                             </div>
                         </label>
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Post-nom">
+                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Post-nom" required="required">
                             <div class="invalid-feedback">
                                 Validation message
                             </div>
@@ -71,14 +71,14 @@
                     </div>
                     <div class="form-group">
                         <label for=""></label>
-                        <textarea class="adr form-control is-valid" name="" id="inputName" rows="3" aria-describedby="helpId" placeholder="Adresse"></textarea>
+                        <textarea class="adr form-control is-valid" name="" id="inputName" rows="3" aria-describedby="helpId" placeholder="Adresse" required="required"></textarea>
                     </div>
                     <div class="invalid-feedback">
                         Validation message
                     </div><br>
                     <div class="form-group">
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Prénom">
+                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Prénom" required="required">
                             <div class="invalid-feedback">
                                 Validation message
                             </div>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group">
                         <label for=""></label>
-                        <input type="date" class="date form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Date de naissance">
+                        <input type="date" class="date form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Date de naissance" required="required">
                         <div class="invalid-feedback">
                             Validation message
                         </div>
@@ -125,12 +125,12 @@
                         <form>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="required">
                               <div id="emailHelp" class="form-text">Nous ne partegerons jamais votre e-mail avec quelqu'un d'autre.</div>
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1">
+                              <input type="password" class="form-control" id="exampleInputPassword1" required="required">
                             </div>
                             <div class="mb-3 form-check">
                               <input type="checkbox" class="form-check-input" id="exampleCheck1">
