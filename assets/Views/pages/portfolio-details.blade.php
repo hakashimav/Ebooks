@@ -20,10 +20,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
+          <h2>Ouvrage Details</h2>
           <ol>
             <li><a href="../index.blade.php">Home</a></li>
-            <li>Portfolio Details</li>
+            <li>Ouvrage Details</li>
           </ol>
         </div>
 
