@@ -10,12 +10,12 @@
       <div class="header-container d-flex align-items-center justify-content-between">
         <!-- logo bibliothèque -->
         <div class="logo">
-          <h1 class="text-light"><a href="index.html"><span>Bibliothèque en ligne</span></a></h1>
+          <h1 class="text-light"><a href="#"><span>Bibliothèque en ligne</span></a></h1>
         </div>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="#">Home</a></li>
             <li><a class="nav-link scrollto" href="pages/about.blade.php">About</a></li>
             <li><a class="nav-link scrollto" href="pages/services.blade.php">Services</a></li>
             <li><a class="nav-link scrollto " href="pages/portfolio.blade.php">Ouvrages</a></li>

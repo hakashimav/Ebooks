@@ -13,7 +13,6 @@
     include '../partials/navbar.blade.php';
   ?>
  
-
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
