@@ -18,7 +18,7 @@
             <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
             <li><a class="nav-link scrollto" href="pages/about.blade.php">About</a></li>
             <li><a class="nav-link scrollto" href="pages/services.blade.php">Services</a></li>
-            <li><a class="nav-link scrollto " href="pages/portfolio.blade.php">Portfolio</a></li>
+            <li><a class="nav-link scrollto " href="pages/portfolio.blade.php">Ouvrages</a></li>
             <li><a class="nav-link scrollto" href="pages/blog.blade.php">blog</a></li>
             <li><a class="nav-link scrollto" href="pages/pricing.blade.php">Abonnement</a></li>
             <li><a class="nav-link scrollto" href="pages/contact.blade.php">Contact</a></li>
