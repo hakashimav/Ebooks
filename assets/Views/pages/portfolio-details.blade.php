@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Portfolio Details</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.blade.php">Home</a></li>
             <li>Portfolio Details</li>
           </ol>
         </div>
@@ -41,15 +41,15 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <img src="../../img/portfolio/portfolio-1.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+                  <img src="../../img/portfolio/portfolio-2.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                  <img src="../../img/portfolio/portfolio-3.jpg" alt="">
                 </div>
 
               </div>
