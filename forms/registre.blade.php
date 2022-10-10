@@ -53,56 +53,40 @@
         <div class="grid-container-fluid">
             <div class="container">
                 <label class="label" for="" data-aos="fade-in" >S'inscrire</label>
-                <form action="" data-aos="fade-up">
+                <form action="../assets/app/inscription.php"  method="POST" data-aos="fade-up">
                     <div class="form-group">
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Nom" required="required">
+                            <input type="text" class="name form-control is-valid" name="Nom" id="inputName" aria-describedby="helpId" placeholder="Nom" required="required">
                             <div class="invalid-feedback">
                                 Validation message
                             </div>
                         </label>
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Post-nom" required="required">
+                            <input type="text" class="name form-control is-valid" name="PostNom" id="inputName" aria-describedby="helpId" placeholder="Post-nom" required="required">
                             <div class="invalid-feedback">
                                 Validation message
                             </div>
-                            
+                        </label>
+                        <label for="">
+                            <input type="text" class="name form-control is-valid" name="PreNom" id="inputName" aria-describedby="helpId" placeholder="Prénom" required="required">
+                            <div class="invalid-feedback">
+                                Validation message
+                            </div>
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for=""></label>
-                        <textarea class="adr form-control is-valid" name="" id="inputName" rows="3" aria-describedby="helpId" placeholder="Adresse" required="required"></textarea>
-                    </div>
-                    <div class="invalid-feedback">
-                        Validation message
-                    </div><br>
-                    <div class="form-group">
                         <label for="">
-                            <input type="text" class="name form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Prénom" required="required">
-                            <div class="invalid-feedback">
-                                Validation message
-                            </div>
-                        </label>
-                        <label for="">
-                            <select class="name form-control" name="" id="">
-                                <option>Homme</option>
-                                <option>Femme</option>
+                            <select class="name form-control" name="Sexe" id="">
+                                <option value="M">Homme</option>
+                                <option value="F">Femme</option>
                             </select>
                         </label>
-                    </div>
-                    <div class="form-group">
-                        <label for=""></label>
-                        <input type="date" class="date form-control is-valid" name="" id="inputName" aria-describedby="helpId" placeholder="Date de naissance" required="required">
-                        <div class="invalid-feedback">
-                            Validation message
-                        </div>
                     </div>
                     <div class="form-group"><br><br>
                         <button type="submit" class="btn  btn-success ">Envoyer</button>
                         <button type="reset" class="btn  btn-danger ">Annuler</button>
                     </div>
                 </form>
-
             </div>
             <div class="other" data-aos="fade-in">
                 <label for="" class="Vous">Vous Pouvez vous connectez</label><br>

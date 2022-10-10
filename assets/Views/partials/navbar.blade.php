@@ -1,3 +1,4 @@
+ <?php session_start(); ?>
  <!-- ======= Header ======= -->
  <header id="header" class="d-flex align-items-center">
     <div class="container  justify-content-between">
@@ -10,7 +11,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="../index.blade.php">Home</a></li>
+          <?php if(!isset($_SESSION["User"])) :?>
+            <li><a href="../index.blade.php">Home</a></li>
+          <?php else : ?>
+            <li><a href="../../app/index.php">Home</a></li>
+          <?php endif; ?>
           <li><a href="about.blade.php">About</a></li>
           <li><a href="services.blade.php">Services</a></li>
           <li><a href="pricing.blade.php">Abonnement</a></li>

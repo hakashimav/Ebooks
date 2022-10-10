@@ -1,8 +1,15 @@
+<?php
+  session_start();
+
+if(!isset($_SESSION["User"])) {
+  header("Location: index.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-  <?php
-    include 'layout/app.blade.php';
-  ?>
+  <?php include '../Views/layout/app.blade.php'; ?>
   <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
@@ -13,18 +20,11 @@
             <h1 class="text-light"><a href="#"><span>Bibliothèque en ligne</span></a></h1>
           </div>
   
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto active" href="#">Home</a></li>
-              <li><a class="nav-link scrollto" href="pages/about.blade.php">About</a></li>
-              <li><a class="nav-link scrollto" href="pages/services.blade.php">Services</a></li>
-              <li><a class="nav-link scrollto" href="pages/pricing.blade.php">Abonnement</a></li>
-              <li><a class="nav-link scrollto" href="pages/contact.blade.php">Contact</a></li>
-              <li><a class="getstarted scrollto" href="../../forms/connect.blade.php">Rejoigne-nous</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav><!-- .navbar -->
-
+          <?php include "navbar.php"; 
+          
+          var_dump($_SESSION)
+          ?>
+          
         </div><!-- End Header Container -->
       </div>
     </header><!-- End Header -->
@@ -34,7 +34,9 @@
       <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
         <h1>Votre Nouvelle Bibliothèque en ligne</h1>
         <h2>Une bibliothèque, c'est le carrefour de tous les rêves de l'humanité</h2>
-        <a href="../../forms/connect.blade.php" class="btn-get-started scrollto">Rejoignez-nous</a>
+        <?php if(!isset($_SESSION["User"])) :?>
+          <a href="../../forms/connect.blade.php" class="btn-get-started scrollto">Rejoignez-nous</a>
+        <?php endif;?>
       </div>
     </section><!-- End Hero -->
 
@@ -263,12 +265,12 @@
 
     <!-- inclure le footer -->
     <?php
-      include 'partials/footer.blade.php';
+      include '../Views/partials/footer.blade.php';
     ?>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    
     <?php
-      include 'layout/appJs.blade.php';
+      include '../Views/layout/appJs.blade.php';
     ?>
   </body>
 

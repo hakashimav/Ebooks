@@ -1,3 +1,61 @@
+<?php
+//on demare la session PHP
+session_start();
+if(isset($_SESSION["User"])) {
+    header("Location: ../assets/app/index.php");
+    exit;
+}
+
+//On verifie si le formulaire à été envoyé
+if(!empty($_POST)) {
+    //le formulaire à été envoyé
+    //on verifie que tous les champs requis son remplis
+  if(isset($_POST["Username"], $_POST["Pass"])
+    && !empty($_POST["Username"] && !empty($_POST["Pass"]))
+  ){
+
+    //on se connecte a la bdd
+
+    include_once "../assets/app/connexion.php";
+
+    $sql = "SELECT * FROM user WHERE username = :Username";
+
+    $query = $con->prepare($sql);
+
+    $query->bindValue(":Username", $_POST['Username']);
+
+    $query->execute();
+
+    $user = $query->fetch();
+
+    if(!$user) {
+      die("L'utilisateur et/ ou le mot de passe est incorrecte'");
+    }
+
+    //ici on a un user existant, on peut verifier le mot de passe
+
+    if(!password_verify($_POST["Pass"], $user["pass"])){
+      die("L'utilisateur et/ ou le mot de passe est incorrecte'");
+    }
+
+    //ici l'utilisateur et le mot de passe son corrects
+    //connecter l'username
+
+    //on stocke dans $_SESSION les infos d'utilisateur
+    $_SESSION["User"] = [
+      "id" => $user["iduser"],
+      "name" => $user["username"],
+      "email" => $user["email"]
+    ];
+
+    //on redirige vers une pages par exemple
+    header("Location: ../assets/app/index.php");
+
+  }
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -43,27 +101,26 @@
         <img src="../assets/img/home.png" alt="homr" class="img-home">
       </a>
       <div class="form">
-        <h2>S'identifier</h2>
-        <form action="" method="">
+        <h2>Se connecter</h2>
+        <form method="POST">
           <div class="inputBox">
-            <input type="text" name="" id="" required="required">
+            <input type="text" name="Username" id="" required="required">
             <span>Nom d'utilisateur</span>
             <i></i>
           </div>
           <div class="inputBox">
-            <input type="password" name="" id="" required="required" maxlength="8">
+            <input type="password" name="Pass" id="" required="required" maxlength="8">
             <span>Mot de passe</span>
             <i></i>
           </div>
           <div class="links">
             <a href="#" title="Mot de passe oublié">Mot de passe oublié</a>
-            <a href="registre.blade.php" title="S'inscrire">S'inscrire</a>
+            <a href="../assets/app/user.php" title="S'inscrire">S'inscrire</a>
           </div>
           <input type="submit" value="Connexion" class="submit">
         </form>
       </div>
     </div>
-
 
     <script src="../assets/vendor/aos/aos.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
