@@ -20,10 +20,7 @@ if(!isset($_SESSION["User"])) {
             <h1 class="text-light"><a href="#"><span>Bibliothèque en ligne</span></a></h1>
           </div>
   
-          <?php include "navbar.php"; 
-          
-          var_dump($_SESSION)
-          ?>
+          <?php include "navbar.php"; ?>
           
         </div><!-- End Header Container -->
       </div>

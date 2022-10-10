@@ -10,8 +10,8 @@
         <?php if(!isset($_SESSION["User"])) :?>
             <li><a class="getstarted scrollto" href="../../forms/connect.blade.php">Rejoigne-nous</a></li>
         <?php else : ?>
-            <li><a class="nav-link scrollto" href="#" title="Profil"><?= $_SESSION["User"]["name"]?></a></li>
-            <li><a href="deconnexion.php">deconnexion</a></li>
+            <li><a class="nav-link scrollto" href="Profil.php" title="Profil"><img class="img-log" src="../img/person-circle-outline.svg" alt="" title="<?= $_SESSION["User"]["name"]?>"><?= $_SESSION["User"]["name"]?></a></li>
+            <li><a href="deconnexion.php"><img class="img-log" src="../img/log-out-outline.svg" alt="" title="Déconnexion"></a></li>
         <?php endif;?>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
