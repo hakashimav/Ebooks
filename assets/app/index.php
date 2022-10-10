@@ -261,14 +261,10 @@ if(!isset($_SESSION["User"])) {
     </main><!-- End #main -->
 
     <!-- inclure le footer -->
-    <?php
-      include '../Views/partials/footer.blade.php';
-    ?>
+    <?php include '../Views/partials/footer.blade.php'; ?>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     
-    <?php
-      include '../Views/layout/appJs.blade.php';
-    ?>
+    <?php include '../Views/layout/appJs.blade.php'; ?>
   </body>
 
 </html>
