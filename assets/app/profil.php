@@ -1,5 +1,12 @@
-<!-- deémarrage de la session User dans PHP -->
-<?php session_start(); ?>
+<?php 
+//deémarrage de la session User dans PHP
+session_start(); 
+//quand l'utilisateur n'est pas connecté alors renvois
+if(!isset($_SESSION["User"])) {
+    header("Location: ../../forms/connect.blade.php");
+    exit;
+}
+?>
 
 <?php
 $isset = isset($_POST["prenom"], $_POST["nom"], $_POST["postnom"], $_POST["daten"], $_POST["numparc"], $_POST["avenue"],
@@ -81,7 +88,7 @@ if(!empty($_POST)){
 
         $query3 = $con->prepare($sql3);
 
-        $query3->bindValue(":Cate", $_POST["Cat"], PDO::PARAM_STR);
+        $query3->bindValue(":Cate", $_POST["cat"], PDO::PARAM_STR);
 
         $query3->execute();
 
@@ -113,11 +120,15 @@ if(!empty($_POST)){
 <html>
     <!-- inclure l'app -->
     <?php include '../Views/layout/app.blade.php'; ?>
+    <head>
+        <!-- style customers for page profil -->
+        <link href="../css/style_profil.css" rel="stylesheet">
+    </head>
 
     <body>
         <div class="container-fluid">
             <!-- Nom d'utilisateur connecté -->
-            <h2>Profil de : </h2>
+            <h2>Profil de : <?= $_SESSION["User"]["name"]?></h2>
             <div class="container-infos">
                 <span></span>
             </div>
@@ -151,8 +162,8 @@ if(!empty($_POST)){
                 </div>
                 <div class="form-floating">
                     <select class="form-select form-select-lg mb-3" name="cat" aria-label=".form-select-lg example">
-                        <option selected value="Homme">Etudiant</option>
-                        <option value="Femme">Chercheur</option>
+                        <option selected value="Etudiant">Etudiant</option>
+                        <option value="Chercheur">Chercheur</option>
                     </select>
                     <label for="">Catégorie</label>
                 </div>

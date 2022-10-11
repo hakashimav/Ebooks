@@ -8,5 +8,6 @@ if(!isset($_SESSION["User"])){
 
 //supprimer une variable
 unset($_SESSION["User"]);
+unset($_SESSION["Lecteur"]);
 
 header("Location: ../views/index.blade.php");

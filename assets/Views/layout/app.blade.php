@@ -26,8 +26,5 @@
     <!-- Template Main CSS File -->
     <link href="../css/style.Css" rel="stylesheet">
 
-    <!-- style customers for page profil -->
-    <link href="../css/style_profil.css" rel="stylesheet">
-
   </head>
   
