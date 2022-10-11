@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: AR techni;
+}
+body {
+    background-color:antiquewhite;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.form-signin {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+}
+.form-signin .box {
+    position: absolute;
+    left: 450px;
+    top: 65px;
+    width: 100%;
+}
+.form-signin .btn {
+    position: absolute;
+    top: 335px;
+    left: 450px;
+    
+}
+.form-signin .ajouter {
+    font-size: 1.35em;
+    
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin .form-control{
+    margin-bottom: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+  

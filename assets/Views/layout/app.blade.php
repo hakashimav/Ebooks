@@ -25,12 +25,9 @@
   
     <!-- Template Main CSS File -->
     <link href="../css/style.Css" rel="stylesheet">
-  
-    <!-- =======================================================
-    * Template Name: Flattern - v4.8.0
-    * Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+
+    <!-- style customers for page profil -->
+    <link href="../css/style_profil.css" rel="stylesheet">
+
   </head>
   
