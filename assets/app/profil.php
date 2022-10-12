@@ -6,6 +6,10 @@ if(!isset($_SESSION["User"])) {
     header("Location: ../../forms/connect.blade.php");
     exit;
 }
+if(isset($_SESSION["Lecteur"])) {
+    header("Location: profil_user.php");
+    exit;
+}
 ?>
 
 <?php
