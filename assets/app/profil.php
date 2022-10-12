@@ -10,6 +10,19 @@ if(isset($_SESSION["Lecteur"])) {
     header("Location: profil_user.php");
     exit;
 }
+ include_once "connexion.php";
+ $Idexist = $_SESSION["User"]["id"];
+
+ $test = "SELECT * FROM lecteur WHERE Iduser = '$Idexist'";
+
+ $array = $con->prepare($test);
+
+ $array->execute();
+
+ $find = $array->fetch();
+ if($find["Iduser"] === $_SESSION["User"]["id"]) {
+    header("Location: profil_user.php");
+ }
 ?>
 
 <?php
