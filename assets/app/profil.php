@@ -185,7 +185,7 @@ if(!empty($_POST)){
                         <label for="floatingcom">Commune</label>
                     </div>
                 </div>
-                <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
+                <button class="w-100 btn btn-lg btn-success" type="submit">Enregistré</button>
             </form>
         </main>
     
