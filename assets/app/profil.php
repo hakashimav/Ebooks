@@ -20,9 +20,11 @@ if(isset($_SESSION["Lecteur"])) {
  $array->execute();
 
  $find = $array->fetch();
- if($find["Iduser"] === $_SESSION["User"]["id"]) {
-    header("Location: profil_user.php");
- }
+ if($find === true) {
+    if($find["Iduser"] === $_SESSION["User"]["id"]) {
+        header("Location: profil_user.php");
+    }
+}
 ?>
 
 <?php

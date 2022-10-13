@@ -30,6 +30,18 @@ if(!empty($_POST)) {
         // on enregistre en bdd
         require_once "connexion.php";
 
+        $sel = "SELECT * FROM user";
+        $querysel = $con->prepare($sel);
+        $querysel->execute();
+
+        $find = $querysel->fetch();
+
+        $Nameuser = $find["username"];
+
+        if ($username === $Nameuser) {
+          die("Le nom d'utilisateur existe déjà");
+        }
+
         $sql = "INSERT INTO user (username, email, pass) 
         VALUES (:Username, :email, '$pass')";
 

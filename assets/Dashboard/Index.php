@@ -1,3 +1,35 @@
+<?php 
+include_once '../app/connexion.php';
+
+$sql = "SELECT * FROM lecteur";
+$query = $con->prepare($sql);
+$query->execute();
+
+$Nlecteur = $query->rowCount();
+
+$Etudiant = "Etudiant";
+
+//selectioné le lecteur de la catégorie Etudiant
+$sql1 = "SELECT * FROM categorielecteur WHERE Libelcateg = '$Etudiant'";
+$query1 = $con->prepare($sql1);
+$query1->execute();
+$CatEtudiant = $query1->rowCount();
+//selectioné le lecteur de la catégorie Chercheur
+
+$Chercheur = "Chercheur";
+
+$sql2 = "SELECT * FROM categorielecteur WHERE Libelcateg = '$Chercheur'";
+$query2 = $con->prepare($sql2);
+$query2->execute();
+$CatChercheur = $query2->rowCount();
+
+//total des ouvrages
+$sql3 = "SELECT * FROM ouvrage";
+$query3 = $con->prepare($sql3);
+$query->execute();
+$Ouvrage = $query3->rowCount();
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -44,13 +76,6 @@
                     
                     <li>
                         <a href="#">
-                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                            <span class="title">Magasin</span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#">
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <span class="title">Auteur</span>
                         </a>
@@ -89,8 +114,8 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1.504</div>
-                        <div class="cardName">Daily Views</div>
+                        <div class="numbers"><?php echo $Nlecteur; ?></div>
+                        <div class="cardName">Lecteur</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="eye-outline"></ion-icon>
@@ -98,8 +123,8 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
+                        <div class="numbers"><?php echo $CatEtudiant; ?></div>
+                        <div class="cardName">Etudiant</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="cart-outline"></ion-icon>                    
@@ -107,8 +132,8 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Comments</div>
+                        <div class="numbers"><?php echo $CatChercheur; ?></div>
+                        <div class="cardName">Chercheur</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="chatbubbles-outline"></ion-icon>                   
@@ -116,8 +141,8 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">$7.842</div>
-                        <div class="cardName">Earning</div>
+                        <div class="numbers"><?php echo $Ouvrage; ?></div>
+                        <div class="cardName">Ouvrage</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="cash-outline"></ion-icon>                   
