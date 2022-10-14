@@ -72,7 +72,7 @@ $Ouvrage = $query3->rowCount();
                             <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
                             <span class="title">Help</span>
                         </a>
-                    </li>
+                    </li> 
                     
                     <li>
                         <a href="#">
