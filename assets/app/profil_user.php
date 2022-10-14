@@ -103,8 +103,9 @@ $Commune = $Ad["Commune"];
                     <label for="floatingpost">Postnom</label>
                 </div>
                 <div class="form-floating">
-                    <select class="form-select form-select-lg mb-3" name="genre" aria-label=".form-select-lg example" value="<?php echo $Genre; ?>">
-                        <option selected value="Homme">Homme</option>
+                    <select class="form-select form-select-lg mb-3" name="genre" aria-label=".form-select-lg example">
+                        <option selected value="<?php echo $Genre; ?>"><?php echo $Genre; ?></option>
+                        <option value="Homme">Homme</option>
                         <option value="Femme">Femme</option>
                         <option value="Autre">Autre</option>
                     </select>
@@ -115,8 +116,9 @@ $Commune = $Ad["Commune"];
                     <label for="floatingdate">Date de naissance</label>
                 </div>
                 <div class="form-floating">
-                    <select class="form-select form-select-lg mb-3" name="cat" aria-label=".form-select-lg example" value="<?php echo $Catlect; ?>">
-                        <option selected value="Etudiant">Etudiant</option>
+                    <select class="form-select form-select-lg mb-3" name="cat" aria-label=".form-select-lg example">
+                        <option selected value="<?php echo $Catlect; ?>"><?php echo $Catlect; ?></option>
+                        <option value="Etudiant">Etudiant</option>
                         <option value="Chercheur">Chercheur</option>
                     </select>
                     <label for="">Catégorie</label>
