@@ -39,7 +39,7 @@ $Ouvrage = $query3->rowCount();
     <body>
         <div class="containerd">
             <div class="navigation">
-                <ul data-aos="fade-right">
+                <ul>
                     <li>
                         <a href="#">
                             <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
@@ -48,14 +48,14 @@ $Ouvrage = $query3->rowCount();
                     </li>
                     
                     <li>
-                        <a href="#">
+                        <a href="Index.php">
                             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                             <span class="title" >Dashboard</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="ouvrage.php">
+                        <a href="">
                             <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
                             <span class="title">Ouvrage</span>
                         </a>
@@ -69,7 +69,7 @@ $Ouvrage = $query3->rowCount();
                     </li> 
                     
                     <li>
-                        <a href="#" class="aut">
+                        <a href="#">
                             <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
                             <span class="title">Auteur</span>
                         </a>
@@ -92,7 +92,7 @@ $Ouvrage = $query3->rowCount();
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <!-- search -->
-                <div class="search" data-aos="fade-down">
+                <div class="search" data-aos="slide-left">
                     <label for="">
                         <input type="text" placeholder="Search here">
                     </label>
@@ -104,7 +104,7 @@ $Ouvrage = $query3->rowCount();
             </div>
 
             <!-- cards -->
-            <div class="cardBox" data-aos="zoom-in">
+            <div class="cardBox" data-aos="slide-left">
                 <div class="card">
                     <div>
                         <div class="numbers"><?php echo $Nlecteur; ?></div>
@@ -145,86 +145,12 @@ $Ouvrage = $query3->rowCount();
 
             <div class="details">
                 <!-- order details list -->
-                <div class="recentOrders" data-aos="fade-right">
+                <div class="recentOrders" data-aos="slide-left">
                     <div class="cardHeader">
                         <h2>Recent Orders</h2>
                         <a href="" class="btn">View All</a>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td>Window Coolers</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Speakers</td>
-                                <td>$620</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-                            <tr>
-                                <td>Hp Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In progrres</span></td>
-                            </tr>
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- New customers -->
-                <div class="recentCustomers" data-aos="slide-left">
-                    <div class="cardHeader">
-                        <h2>Recent Customers</h2>
-                    </div>
-                    <table>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Mohamed<br><span>Italy</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Clark<br><span>France</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Mark<br><span>Span</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Joshep<br><span>USA</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Ben<br><span>Egypte</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Alex<br><span>Syrie</span></h4></td>
-                        </tr>
-                    </table>
+                    
                 </div>
             </div>
         </div>

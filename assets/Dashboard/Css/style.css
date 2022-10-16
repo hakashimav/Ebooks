@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Ar_techni;
+    font-family: AR techni;
 
 }
 :root
@@ -19,10 +19,12 @@ body
     min-height: 100vh;
     overflow-x: hidden;
 }
-.container
+
+.containerd
 {
     position: relative;
     width: 100%;
+    
 }
 .navigation
 {
@@ -274,6 +276,7 @@ img
     grid-gap: 30px;
     /* margin-top: 10px; */
 }
+
 .details .recentOrders
 {
     position: relative;
