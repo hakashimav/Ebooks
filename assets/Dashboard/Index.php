@@ -39,7 +39,7 @@ $Ouvrage = $query3->rowCount();
     <body>
         <div class="containerd">
             <div class="navigation">
-                <ul data-aos="fade-right">
+                <ul>
                     <li>
                         <a href="#">
                             <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>

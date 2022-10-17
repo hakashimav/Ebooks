@@ -1,46 +1,48 @@
-/* Anim */
-.inshow {
-    visibility:hidden;
-    z-index: 1;
-    transition: 0.5s forward;
-}
-.show {
-    visibility: visible;
-    z-index: 10;
-    transition: 0.5s ease-in-out;
-
-}
-.main1 {
-    display:block;
-}
-.main1 h1 {
-    text-align: center;
-    font-size:30px
-}
-#Ouvrage {
-    position: absolute;
-    top: 200px;
-}
-.details-other {
+.formControl {
     position: relative;
-    top: -70px;
-    left: 100px;
+    max-width: 100%;
     display: grid;
-    min-height: 500px;
-    background: whitesmoke;
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    column-gap: 30px;
+    justify-content: space-between;
 }
-#Auteur {
-    position: absolute;
-    top: 200px;
+.TextTitre {
+    width: 500px;
+    height: 100px;
+    margin: 15px;
+    padding: 8px;
+    font-size: 1.1em;
+    resize: none;
 }
-.form-floating {
-    margin: 10px;
+.TextTitre:focus {
+    transition: 0.3s;
+    transform: scale(1.1);
+    border: 1px solid green;
+    outline:none;
 }
-.form-floating .form-control {
-    width: 300px;
+.InputControl {
+    width: 250px;
+    height: 50px;
+    margin: 15px;
+    padding: 8px;
+    font-size: 1.1em; 
 }
-.btn {
-    width: 200px;
+.InputControl:focus {
+    transition: 0.3s;
+    transform: scale(1.1);
+    border: 1px solid green;
+    outline:none;
+}
+.btn-submit {
+    padding: 10px;
+    margin: 15px;
+    font-size: 18px;
+    color: white;
+    background: green;
+    border: 1px solid green;
+    cursor: pointer;
+}
+.btn-submit:hover {
+    background: rgb(3, 83, 3);
+    border: 1px solid rgb(3, 83, 3);
+    transition: 0.3s;
 }

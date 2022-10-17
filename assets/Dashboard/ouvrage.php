@@ -34,6 +34,7 @@ $Ouvrage = $query3->rowCount();
 <html lang="fr">
     <head>
         <?php require '../Views/layout/app_dash.blade.php'; ?>
+        <link rel="stylesheet" href="Css/main.css">
     </head>
 
     <body>
@@ -147,10 +148,29 @@ $Ouvrage = $query3->rowCount();
                 <!-- order details list -->
                 <div class="recentOrders" data-aos="slide-left">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="" class="btn">View All</a>
+                        <h2>Ajouter un ouvrage</h2>
                     </div>
-                    
+                    <div class="formBox">
+                        <form method="" class="form">
+                            <div class="formControl">
+                                <label for="Titre" class="InputLabel"></label>
+                                <textarea name="Titre" id="Titre" cols="30" rows="10" placeholder="Titre Ouvrage" class="TextTitre"></textarea>
+                            </div>
+                            <div class="formControl">
+                                <label for="Maison" class="InputLabel"></label>
+                                <input type="text" name="maison" id="Maison" class="InputControl" placeholder="Maison d'édition">
+                            </div>
+                            <div class="formControl">
+                                <label for="Annee" class="InputLabel"></label>
+                                <input type="text" name="annee" id="Annee" class="InputControl" placeholder="Année d'édition">
+                            </div>
+                            <div class="formControl">
+                                <label for="Auteur" class="InputLabel"></label>
+                                <input type="text" name="auteur" id="Auteur" class="InputControl" placeholder="Nom de l'auteur">
+                            </div>
+                            <button type="submit" class="btn-submit">Enregistré</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
