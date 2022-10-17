@@ -56,7 +56,7 @@ $Ouvrage = $query3->rowCount();
                     </li>
                     
                     <li>
-                        <a href="">
+                        <a href="#">
                             <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
                             <span class="title">Ouvrage</span>
                         </a>
@@ -70,7 +70,7 @@ $Ouvrage = $query3->rowCount();
                     </li> 
                     
                     <li>
-                        <a href="#">
+                        <a href="auteur.php">
                             <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
                             <span class="title">Auteur</span>
                         </a>
