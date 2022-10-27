@@ -3,7 +3,7 @@
 session_start(); 
 //quand l'utilisateur n'est pas connecté alors renvois
 if(!isset($_SESSION["User"])) {
-    header("Location: ../../forms/connect.blade.php");
+    header("Location: errors/404.php");
     exit;
 }
 ?>

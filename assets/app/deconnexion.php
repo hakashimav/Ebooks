@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION["User"])){
-    header("Location: ../../forms/connect.blade.php");
+    header("Location: errors/404.php");
     exit;
 }
 
