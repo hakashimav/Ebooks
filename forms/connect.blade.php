@@ -29,16 +29,18 @@ if(!empty($_POST)) {
     $user = $query->fetch();
 
     if(!$user) {
-      die("L'utilisateur et/ ou le mot de passe est incorrecte'");
+    die("L'utilisateur et/ ou le mot de passe est incorrecte");
+    $error = "L'utilisateur et/ ou le mot de passe est incorrecte";
     }
-
+    
     //ici on a un user existant, on peut verifier le mot de passe
 
     if(!password_verify($_POST["Pass"], $user["pass"])){
-      die("L'utilisateur et/ ou le mot de passe est incorrecte'");
+      die ("L'utilisateur et/ ou le mot de passe est incorrecte");
     }
 
     //ici l'utilisateur et le mot de passe son corrects
+
     //connecter l'username
 
     //on stocke dans $_SESSION les infos d'utilisateur
@@ -86,19 +88,35 @@ if(!empty($_POST)) {
     <!-- Font-awesome File -->
     <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
     
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
 
     <!-- the style customers -->
-    <link rel="stylesheet" href="../assets/css/style1.Css">
+    <link rel="stylesheet" href="../assets/css/style1.css">
+    <style>
+      .erorrs {
+      position: absolute;
+      top: 100px;
+      background: #28292d;
+      border: 1px solid red;
+      border-radius:8px;
+      }
+      .erorrs  p {
+      color:red;
+      margin: 10px;
+      }
+    </style>
 
   </head>
+
   <body>
+    <?php if(isset($error)) :?>
+    <div class="erorrs">
+      <p>L'utilisateur et/ ou le mot de passe est incorrecte</p>
+    </div>
+    <?php endif; ?>
     <div class="box" data-aos="fade-up">
       <a href="../assets/Views/index.blade.php" class="links-home" title="Accueil">
-        <img src="../assets/img/home.png" alt="homr" class="img-home">
+        <img src="../assets/img/home.png" alt="home" class="img-home">
       </a>
       <div class="form">
         <h2>Se connecter</h2>

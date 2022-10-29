@@ -2,7 +2,7 @@
 //on demarre la session PHP
 session_start();
 if(isset($_SESSION["User"])) {
-    header("Location: ../Viewq/index.blade.php");
+    header("Location: ../Views/index.blade.php");
     exit;
 }
 //On verifie si le formulaire à été envoyé

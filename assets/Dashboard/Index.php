@@ -29,6 +29,8 @@ $query3 = $con->prepare($sql3);
 $query->execute();
 $Ouvrage = $query3->rowCount();
 
+$lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -147,49 +149,41 @@ $Ouvrage = $query3->rowCount();
                 <!-- order details list -->
                 <div class="recentOrders" data-aos="fade-right">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
+                        <h2>Liste générale des lecteurs</h2>
                         <a href="" class="btn">View All</a>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
+                                <td>Nom</td>
+                                <td>Postnom</td>
+                                <td>Genre</td>
+                                <td>Catégorie</td>
+                                <td>Abonnement</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td>Window Coolers</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Speakers</td>
-                                <td>$620</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-                            <tr>
-                                <td>Hp Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In progrres</span></td>
-                            </tr>
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
+                            <?php foreach($lecteur as $donnees) : ?>
+                                <tr>
+                                    <td><?= $donnees["Nom"];?></td>
+                                    <td><?= $donnees["Postnom"];?></td>
+                                    <td><?= $donnees["Sexe"];?></td>
+                                
+                                    <?php $Numlecteur = $donnees["Numlecteur"]; ?>
+                                    <?php $abon = $con->query("SELECT * FROM abonnement WHERE Numlecteur = '$Numlecteur'")->fetchAll(); ?>
+                                    <?php foreach($abon as $abons) : ?>
+                                    <?php endforeach; ?>
+                                    <?php $code = $abons["Codetypeab"];?>
+                                    <?php $cat = $con->query("SELECT * FROM categorielecteur WHERE Numlecteur = '$Numlecteur'")->fetchAll();?>
+                                    <?php foreach($cat as $cats) :?>
+                                        <td><span class="status return"><?= $cats["Libelcateg"]; ?></span></td>
+                                    <?php endforeach;?>
+                                    <?php $type = $con->query("SELECT * FROM typeabonnement WHERE Codetypeab = '$code'")->fetchAll();?>
+                                    <?php foreach($type as $types) :?>
+                                        <td><span class="status delivered"><?= $types["Libeltypeab"]; ?></span></td>
+                                    <?php endforeach;?>
+                                </tr>
+                            <?php endforeach;?>    
                         </tbody>
                     </table>
                 </div>
