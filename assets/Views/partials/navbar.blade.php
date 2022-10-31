@@ -18,9 +18,11 @@
           <?php endif; ?>
           <li><a href="about.blade.php">About</a></li>
           <li><a href="services.blade.php">Services</a></li>
-          <li><a href="pricing.blade.php">Abonnement</a></li>
-          <li><a href="portfolio.blade.php">Ouvrages</a></li>
+          <?php if(isset($_SESSION["User"])) :?>
           <li><a href="blog.blade.php">Magasin</a></li>
+          <li><a href="portfolio.blade.php">Ouvrages</a></li>    
+          <?php endif; ?>
+          <li><a href="pricing.blade.php">Abonnement</a></li>
           <li><a href="contact.blade.php">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

@@ -21,7 +21,11 @@
           <div class="d-flex justify-content-between align-items-center">
             <h2>Contact</h2>
             <ol>
+              <?php if(!isset($_SESSION["User"])) :?>
               <li><a href="../index.blade.php">Home</a></li>
+              <?php else : ?>
+              <li><a href="../../app/index.php">Home</a></li>
+              <?php endif; ?>
               <li>Contact</li>
             </ol>
           </div>
