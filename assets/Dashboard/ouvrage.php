@@ -29,6 +29,35 @@ $query3 = $con->prepare($sql3);
 $query->execute();
 $Ouvrage = $query3->rowCount();
 
+ if(!empty($_POST)) { 
+
+        if(isset($_POST["titre"], $_POST["maison"], $_POST["annee"], $_POST["auteur"], $_POST["files"])
+        && !empty($_POST["titre"]) && !empty($_POST["annee"]) && !empty($_POST["maison"]) && !empty($_POST["auteur"])
+        && !empty($_POST["files"])) { }
+
+        $titre = strip_tags($_POST['titre']);
+        $maison = strip_tags($_POST['maison']);
+        $annee = strip_tags($_POST['annee']);
+        $auteur = strip_tags($_POST['auteur']);
+
+        $insert = "INSERT INTO ouvrage (Nomouv, Maisonedit, Anneedit, Files, Auteur, Photo)
+        VALUES(:Nomouv, :Maison, :Annee, :Files, :Auteur, :Photo)";
+
+        $req = $con->prepare($insert);
+
+        $req->bindValue(":Nomouv", $titre, PDO::PARAM_STR);
+        $req->bindValue(":Maison", $maison, PDO::PARAM_STR);
+        $req->bindValue(":Annee", $annee, PDO::PARAM_STR);
+        $req->bindValue(":Files", $_POST["files"], PDO::PARAM_STR);
+        $req->bindValue(":Auteur", $auteur, PDO::PARAM_STR);
+        $req->bindValue(":Photo", $_POST["Photos"], PDO::PARAM_STR);
+
+        $req->execute();
+    
+       
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -151,10 +180,10 @@ $Ouvrage = $query3->rowCount();
                         <h2>Ajouter un ouvrage</h2>
                     </div>
                     <div class="formBox">
-                        <form method="" class="form">
+                        <form method="POST" class="form">
                             <div class="formControl">
                                 <label for="Titre" class="InputLabel"></label>
-                                <textarea name="Titre" id="Titre" cols="30" rows="10" placeholder="Titre Ouvrage" class="TextTitre"></textarea>
+                                <textarea name="titre" id="Titre" cols="30" rows="10" placeholder="Titre Ouvrage" class="TextTitre"></textarea>
                             </div>
                             <div class="formControl">
                                 <label for="Maison" class="InputLabel"></label>
@@ -162,11 +191,19 @@ $Ouvrage = $query3->rowCount();
                             </div>
                             <div class="formControl">
                                 <label for="Annee" class="InputLabel"></label>
-                                <input type="text" name="annee" id="Annee" class="InputControl" placeholder="Année d'édition">
+                                <input type="Date" name="annee" id="Annee" class="InputControl" placeholder="Année d'édition">
                             </div>
                             <div class="formControl">
                                 <label for="Auteur" class="InputLabel"></label>
                                 <input type="text" name="auteur" id="Auteur" class="InputControl" placeholder="Nom de l'auteur">
+                            </div>
+                            <div class="formControl">
+                                <label for="files" class="InputLabel">Fichier</label>
+                                <input type="File" name="files" id="files" class="InputControl" placeholder="Fichier">
+                            </div>
+                            <div class="formControl">
+                                <label for="files" class="InputLabel">Image Couverture</label>
+                                <input type="File" name="Photos" id="files" class="InputControl" placeholder="Photo">
                             </div>
                             <button type="submit" class="btn-submit">Enregistré</button>
                         </form>
