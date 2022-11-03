@@ -39,6 +39,8 @@ $Ouvrage = $query3->rowCount();
         $maison = strip_tags($_POST['maison']);
         $annee = strip_tags($_POST['annee']);
         $auteur = strip_tags($_POST['auteur']);
+        $files = $_FILES['Files']['name'];
+        $photos = $_FILES['Photos']['name'];
 
         $insert = "INSERT INTO ouvrage (Nomouv, Maisonedit, Anneedit, Files, Auteur, Photo)
         VALUES(:Nomouv, :Maison, :Annee, :Files, :Auteur, :Photo)";
@@ -48,12 +50,45 @@ $Ouvrage = $query3->rowCount();
         $req->bindValue(":Nomouv", $titre, PDO::PARAM_STR);
         $req->bindValue(":Maison", $maison, PDO::PARAM_STR);
         $req->bindValue(":Annee", $annee, PDO::PARAM_STR);
-        $req->bindValue(":Files", $_POST["files"], PDO::PARAM_STR);
+        $req->bindValue(":Files", $files, PDO::PARAM_STR);
         $req->bindValue(":Auteur", $auteur, PDO::PARAM_STR);
-        $req->bindValue(":Photo", $_POST["Photos"], PDO::PARAM_STR);
+        $req->bindValue(":Photo", $photos, PDO::PARAM_STR);
 
         $req->execute();
-    
+
+        $dir = "../Dashboard/icon/";
+        $nameFile = $_FILES['Photos']['name'];
+        $tmpFile = $_FILES['Photos']['tmp_name'];
+        $typeFile = explode(".", $nameFile)[1];
+
+        $correct = array("PNG", 'JPG', "GIF", "png", "jpg", "gif");
+
+        if(in_array($typeFile, $correct)) {
+            if(move_uploaded_file($tmpFile, $dir . $nameFile )) {
+                echo "Uploaded image";
+            }else {
+                echo "echec uploaded image";
+            }
+        }else {
+            echo "incorrect image type file";
+        }
+
+        $route = "../Dashboard/doc/";
+        $fileName = $_FILES['Files']['name'];
+        $fileTmp = $_FILES['Files']['tmp_name'];
+        $fileType = explode(".", $fileName)[1];
+
+        $exe = array("pdf", "PDF", "doc", "DOC", "docx", "DOCX", "odt", "ODT");
+
+        if (in_array($fileType, $exe)) {
+            if(move_uploaded_file($fileTmp, $route . $fileName)) {
+                echo "Uploaded doc";
+            }else {
+                echo "echec uploaded doc";
+            }
+        }else {
+            echo "incorrect image type file";
+        }
        
     }
 
@@ -180,7 +215,7 @@ $Ouvrage = $query3->rowCount();
                         <h2>Ajouter un ouvrage</h2>
                     </div>
                     <div class="formBox">
-                        <form method="POST" class="form">
+                        <form method="POST" class="form" enctype="multipart/form-data">
                             <div class="formControl">
                                 <label for="Titre" class="InputLabel"></label>
                                 <textarea name="titre" id="Titre" cols="30" rows="10" placeholder="Titre Ouvrage" class="TextTitre"></textarea>
@@ -199,11 +234,11 @@ $Ouvrage = $query3->rowCount();
                             </div>
                             <div class="formControl">
                                 <label for="files" class="InputLabel">Fichier</label>
-                                <input type="File" name="files" id="files" class="InputControl" placeholder="Fichier">
+                                <input type="file" name="Files" id="files" class="InputControl" placeholder="Fichier">
                             </div>
                             <div class="formControl">
                                 <label for="files" class="InputLabel">Image Couverture</label>
-                                <input type="File" name="Photos" id="files" class="InputControl" placeholder="Photo">
+                                <input type="file" name="Photos" id="files" class="InputControl" placeholder="Photo">
                             </div>
                             <button type="submit" class="btn-submit">Enregistré</button>
                         </form>
