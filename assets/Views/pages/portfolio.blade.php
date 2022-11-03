@@ -28,6 +28,22 @@
   $ouv2 = $query2->fetch();
   $dir_file2 = $ouv2["Files"];
   $dir_img2 = $ouv2["Photo"];
+  // for faur ouvrage
+  $Numouv3 = 32;
+  $sql3 = "SELECT * FROM ouvrage WHERE Codeouv = '$Numouv3'";
+  $query3 = $con->prepare($sql3);
+  $query3->execute();
+  $ouv3 = $query3->fetch();
+  $dir_file3 = $ouv3["Files"];
+  $dir_img3 = $ouv3["Photo"];
+  // for five ouvrage
+  $Numouv4 = 33;
+  $sql4 = "SELECT * FROM ouvrage WHERE Codeouv = '$Numouv4'";
+  $query4 = $con->prepare($sql4);
+  $query4->execute();
+  $ouv4 = $query4->fetch();
+  $dir_file4 = $ouv4["Files"];
+  $dir_img4 = $ouv4["Photo"];
 
 
 ?>
@@ -85,16 +101,17 @@
           </div>
 
           <div class="row portfolio-container" data-aos="fade-up">
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <img src="../../img/portfolio/html.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <a href="../../img/portfolio/html.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <a href="<?= $dir . $dir_file3?>">           
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <img src="<?= $route . $dir_img3?>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>View</p>
+                  <a href="<?= $dir . $dir_file3?>"  title="View"><i class="fa fa-eye"></i></a>
+                  <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
-            </div>
+            </a>
+
 
             <a href="<?= $dir . $dir_file?>">
               <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -128,27 +145,17 @@
               </div>
             </div>
             </a>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="../../img/portfolio/Entreprendre.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <a href="../../img/portfolio/Entreprendre.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <a href="<?= $dir . $dir_file4;?>"></a>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <img src="<?= $route . $dir_img4;?>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>View</p>
+                  <a href="<?= $dir . $dir_file4;?>" title="View"><i class="fa fa-eye"></i></a>
+                  <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <img src="../../img/portfolio/Projet.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <a href="../../img/portfolio/Projet.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-
+            </a>
+            
           </div>
 
         </div>

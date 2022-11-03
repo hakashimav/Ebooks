@@ -26,7 +26,7 @@ $CatChercheur = $query2->rowCount();
 //total des ouvrages
 $sql3 = "SELECT * FROM ouvrage";
 $query3 = $con->prepare($sql3);
-$query->execute();
+$query3->execute();
 $Ouvrage = $query3->rowCount();
 
 $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
