@@ -83,35 +83,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="../../img/portfolio/php.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <a href="../../img/portfolio/php.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <img src="../../img/portfolio/bdd.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <a href="../../img/portfolio/bdd.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <img src="../../img/portfolio/Informatique.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <a href="../../img/portfolio/Informatique.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
+           
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <img src="../../img/portfolio/python.jfif" class="img-fluid" alt="">

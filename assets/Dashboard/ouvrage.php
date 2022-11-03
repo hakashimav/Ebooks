@@ -61,7 +61,7 @@ $Ouvrage = $query3->rowCount();
         $tmpFile = $_FILES['Photos']['tmp_name'];
         $typeFile = explode(".", $nameFile)[1];
 
-        $correct = array("PNG", 'JPG', "GIF", "png", "jpg", "gif");
+        $correct = array("PNG", 'JPG', "GIF", "JPEG", "png", "jpg", "gif", "jpeg");
 
         if(in_array($typeFile, $correct)) {
             if(move_uploaded_file($tmpFile, $dir . $nameFile )) {
@@ -233,7 +233,7 @@ $Ouvrage = $query3->rowCount();
                                 <input type="text" name="auteur" id="Auteur" class="InputControl" placeholder="Nom de l'auteur">
                             </div>
                             <div class="formControl">
-                                <label for="files" class="InputLabel">Fichier</label>
+                                <label for="files" class="InputLabel">Document</label>
                                 <input type="file" name="Files" id="files" class="InputControl" placeholder="Fichier">
                             </div>
                             <div class="formControl">
