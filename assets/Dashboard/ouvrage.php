@@ -31,10 +31,6 @@ $Ouvrage = $query3->rowCount();
 
  if(!empty($_POST)) { 
 
-        if(isset($_POST["titre"], $_POST["maison"], $_POST["annee"], $_POST["auteur"], $_POST["files"])
-        && !empty($_POST["titre"]) && !empty($_POST["annee"]) && !empty($_POST["maison"]) && !empty($_POST["auteur"])
-        && !empty($_POST["files"])) { }
-
         $titre = strip_tags($_POST['titre']);
         $maison = strip_tags($_POST['maison']);
         $annee = strip_tags($_POST['annee']);
@@ -61,7 +57,7 @@ $Ouvrage = $query3->rowCount();
         $tmpFile = $_FILES['Photos']['tmp_name'];
         $typeFile = explode(".", $nameFile)[1];
 
-        $correct = array("PNG", 'JPG', "GIF", "JPEG", "png", "jpg", "gif", "jpeg");
+        $correct = array("PNG", 'JPG', "GIF", "JPEG", "png", "jpg", "gif", "jpeg", "jfif");
 
         if(in_array($typeFile, $correct)) {
             if(move_uploaded_file($tmpFile, $dir . $nameFile )) {
