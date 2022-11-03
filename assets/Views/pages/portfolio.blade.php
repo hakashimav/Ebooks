@@ -1,3 +1,37 @@
+<?php 
+
+  require '../../app/connexion.php';
+
+  $dir = "../../Dashboard/doc/";
+  $route = "../../Dashboard/icon/";
+  // for first ouvrage 
+  $Numouv = 29;
+  $sql = "SELECT * FROM ouvrage WHERE Codeouv = '$Numouv'";
+  $query = $con->prepare($sql);
+  $query->execute();
+  $ouv = $query->fetch();
+  $dir_file = $ouv["Files"];
+  $dir_img = $ouv["Photo"];
+  // for second ouvrage
+  $Numouv1 = 30;
+  $sql1 = "SELECT * FROM ouvrage WHERE Codeouv = '$Numouv1'";
+  $query1 = $con->prepare($sql1);
+  $query1->execute();
+  $ouv1 = $query1->fetch();
+  $dir_file1 = $ouv1["Files"];
+  $dir_img1 = $ouv1["Photo"];
+  // for three ouvrage
+  $Numouv2 = 31;
+  $sql2 = "SELECT * FROM ouvrage WHERE Codeouv = '$Numouv2'";
+  $query2 = $con->prepare($sql2);
+  $query2->execute();
+  $ouv2 = $query2->fetch();
+  $dir_file2 = $ouv2["Files"];
+  $dir_img2 = $ouv2["Photo"];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -61,39 +95,39 @@
                 <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
-            <a href="../../doc/cours_mcsi.pdf">
+
+            <a href="<?= $dir . $dir_file?>">
               <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <img src="../../img/portfolio/merise.png" class="img-fluid" alt="">
+                <img src="<?= $route . $dir_img?>" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Web 3</h4>
-                  <p>Web</p>
-                  <a href="../../doc/cours_mcsi.pdf"  title="Views"><i class="fa fa-eye"></i></a>
+                  <p>View</p>
+                  <a href="<?= $dir . $dir_file?>"  title="View"><i class="fa fa-eye"></i></a>
                   <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </a>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <img src="../../img/portfolio/algo.jfif" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <a href="../../img/portfolio/algo.jfif data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <a href="<?= $dir . $dir_file1?>">
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <img src="<?= $route . $dir_img1?>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>View</p>
+                  <a href="<?= $dir . $dir_file1?>" title="View" ><i class="fa fa-eye"></i></a>
+                  <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
-            </div>
-
+            </a>
            
-
+            <a href="<?= $dir . $dir_file2?>">
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <img src="../../img/portfolio/python.jfif" class="img-fluid" alt="">
+              <img src="<?= $route . $dir_img2?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <a href="../../img/portfolio/python.jfif" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                <p>View</p>
+                <a href="<?= $dir . $dir_file2;?>" title="View"><i class="fa fa-eye"></i></a>
                 <a href="portfolio-details.blade.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
+            </a>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <img src="../../img/portfolio/Entreprendre.jfif" class="img-fluid" alt="">
