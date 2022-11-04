@@ -1,4 +1,10 @@
 <?php 
+  session_start();
+
+  if(!isset($_SESSION["Admi"])) {
+    header("Location: ../app/errors/404.php");
+    exit;
+  }
 include_once '../app/connexion.php';
 
 $sql = "SELECT * FROM lecteur";
@@ -78,7 +84,7 @@ $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
                     </li>
                     
                     <li>
-                        <a href="#">
+                        <a href="../app/out.php">
                             <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                             <span class="title">Sign out</span>
                         </a>

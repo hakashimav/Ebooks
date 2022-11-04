@@ -7,6 +7,9 @@ if(isset($_SESSION["User"])) {
 }
 if(@$_POST["Username"] == "root" AND @$_POST["Pass"] == "root") {
       header("Location: ../assets/Dashboard/index.php");
+      $_SESSION["Admi"] = [
+        "Name" => $_POST["Username"]
+      ];
     }
 //On verifie si le formulaire à été envoyé
 if(!empty($_POST)) {
