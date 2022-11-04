@@ -4,8 +4,8 @@
         <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
         <li><a class="nav-link scrollto" href="../Views/pages/about.blade.php">About</a></li>
         <li><a class="nav-link scrollto" href="../Views/pages/services.blade.php">Services</a></li>
-        <li><a class="nav-link scrollto" href="../Views/pages/portfolio.blade.php">Ouvrages</a></li>
-        <li><a class="nav-link scrollto" href="../Views/pages/blog.blade.php">Magasin</a></li>
+        <li><a class="nav-link scrollto" href="../Views/pages/ouvrage.blade.php">Ouvrages</a></li>
+        <li><a class="nav-link scrollto" href="../Views/pages/magasin.blade.php">Magasin</a></li>
         <li><a class="nav-link scrollto" href="../Views/pages/pricing.blade.php">Abonnement</a></li>
         <li><a class="nav-link scrollto" href="../Views/pages/contact.blade.php">Contact</a></li>
         <?php if(!isset($_SESSION["User"])) :?>
