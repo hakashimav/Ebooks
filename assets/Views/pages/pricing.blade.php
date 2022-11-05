@@ -1,60 +1,61 @@
 <?php  
-  
-  // $isset = isset($_POST["Cate_Jour"], $_POST["Cate_Annuel"], $_POST["Cate_Mensuel"]);
+  session_start();
 
-  // $empty = !empty($_POST["Cate_Jour"]) && !empty($_POST["Cate_Annuel"]) && !empty($_POST["Cate_Mensuel"]);
+  @$Jour = $_POST["Cate_Jour"];
+  @$Anne = $_POST["Cate_Annuel"];
+  @$Men = $_POST["Cate_Mensuel"];
+      
+      $Id = $_SESSION["User"]["id"];
+      
+      include_once '../../app/connexion.php';
+      
+      $req = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
+      $quer = $con->prepare($req);
+      $quer->execute();
+      
+      $lect = $quer->fetch();
+      $num = $lect["Numlecteur"];
+      
+      $sql = "SELECT * FROM categorielecteur WHERE Numlecteur	='$num'";
+      $query = $con->prepare($sql);
+      $query->execute();
+      $fetch = $query->fetch();
 
-  // if (!empty($_POST)) { }
-    
-  //   if ($isset && !$empty) {}
+      $Categorie = $fetch["Libelcateg"];
       
-  //     $Id = $_SESSION["User"]["id"];
-      
-  //     include_once '../../app/connexion.php';
-      
-  //     $req = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
-  //     $quer = $con->prepare($req);
-  //     $quer->execute();
-      
-  //     $lect = $quer->fetch();
-  //     $num = $lect["Numlecteur"];
-      
-  //     $sql = "SELECT * FROM categorielecteur WHERE Numlecteur	='$num'";
-  //     $query = $con->prepare($sql);
-  //     $query->execute();
-  //     $fetch = $query->fetch();
+      $find = "SELECT * FROM typeabonnement WHERE Categorie = '$Categorie'";
+      $res = $con->prepare($find);
+      $res->setFetchMode(PDO::FETCH_ASSOC);
+      $res->execute();
+      $tab = $res->fetchAll();
+      for ($i=0;$i<count($tab);$i++) {
+        if($tab[$i]["Libeltypeab"] == $Jour AND $tab[$i]["Categorie"] == $Categorie) {
+          $code = $tab[$i]["Codetypeab"];
+        }
+        if($tab[$i]["Libeltypeab"] == $Anne AND $tab[$i]["Categorie"] == $Categorie) {
+          $code = $tab[$i]["Codetypeab"];
+        }
+        if($tab[$i]["Libeltypeab"] == $Men AND $tab[$i]["Categorie"] == $Categorie) {
+          $code = $tab[$i]["Codetypeab"];
+        }
+      }
+      $sel = "SELECT * FROM abonnement WHERE Numlecteur = '$num'";
+      $rl = $con->prepare($sel);
+      $rl->execute();
+      $show = $rl->fetch();
+      $Numlect = $show["Numlecteur"];      
 
-  //     $Categorie = $fetch["Libelcateg"];
+      if($Numlect = $num) {
+        echo "L'abonnement est à jour! ";
       
-  //     $find = "SELECT * FROM typeabonnement";
-  //     $query1 = $con->prepare($find);
-  //     $query1->execute();
-  //     $types = $query1->fetch();      
-  //     if (!empty($_POST)) {
-      
-  //     if ($types["Libeltypeab"] == isset($_POST["Cate_Jour"]) AND $types["Categorie"] == $Categorie ) {
-  //       $code = $types["Codetypeab"];
-  //     }
-      
-  //     if ($types["Libeltypeab"] == isset($_POST["Cate_Annuel"]) AND $types["Categorie"] == $Categorie ) {
-  //       $code = $types["Codetypeab"];
-  //     }
-    
-  //     if ($types["Libeltypeab"] == isset($_POST["Cate_Mensuel"]) AND $types["Categorie"] == $Categorie ) {
-  //       $code = $types["Codetypeab"];
-  //     }
-  //     var_dump($code);
-  //     var_dump($types["Libeltypeab"]);
-  //     var_dump($_POST["Cate_Jour"]); 
-  //   }  
-  //   var_dump($Categorie);
- 
-      // $insert = "INSERT INTO abonnement ( Codetypeab, Numlecteur) 
-      // VALUES(:code, :num)";
-      // $queryi = $con->prepare($insert);
-      // $queryi->bindValue(":code", $code, PDO::PARAM_STR);
-      // $queryi->bindValue(":num", $num, PDO::PARAM_STR);
-      // $queryi->execute();
+      }else {
+        $insert = "INSERT INTO abonnement ( Codetypeab, Numlecteur) 
+        VALUES(:code, :num)";
+        $queryi = $con->prepare($insert);
+        $queryi->bindValue(":code", $code, PDO::PARAM_STR);
+        $queryi->bindValue(":num", $num, PDO::PARAM_STR);
+        $queryi->execute();
+      }
     
 ?>
 

@@ -80,9 +80,9 @@ if(!isset($_SESSION["User"])) {
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="fa fa-book"></i><?php echo $tab[$i]["Auteur"]?></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i><?php echo $tab[$i]["Anneedit"]?></li>
-                    <li class="d-flex align-items-center"><i class="fa fa-home"></i><?php echo $tab[$i]["Maisonedit"]?></li>
+                    <li class="d-flex align-items-center" title="Auteur"><i class="fa fa-book"></i><?php echo $tab[$i]["Auteur"]?></li>
+                    <li class="d-flex align-items-center" title="Année d'édition"><i class="fa fa-calendar"></i><?php echo $tab[$i]["Anneedit"]?></li>
+                    <li class="d-flex align-items-center" title="Maison d'édition"><i class="fa fa-home"></i><?php echo $tab[$i]["Maisonedit"]?></li>
                   </ul>
                 </div>
 
