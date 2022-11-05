@@ -5,57 +5,71 @@
   @$Anne = $_POST["Cate_Annuel"];
   @$Men = $_POST["Cate_Mensuel"];
       
-      $Id = $_SESSION["User"]["id"];
-      
-      include_once '../../app/connexion.php';
-      
-      $req = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
-      $quer = $con->prepare($req);
-      $quer->execute();
-      
-      $lect = $quer->fetch();
-      $num = $lect["Numlecteur"];
-      
-      $sql = "SELECT * FROM categorielecteur WHERE Numlecteur	='$num'";
-      $query = $con->prepare($sql);
-      $query->execute();
-      $fetch = $query->fetch();
+  $Id = $_SESSION["User"]["id"];
+  
+  include_once '../../app/connexion.php';
+  
+  $req = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
+  $quer = $con->prepare($req);
+  $quer->execute();
+  
+  $lect = $quer->fetch();
+  $num = $lect["Numlecteur"];
+  
+  $sql = "SELECT * FROM categorielecteur WHERE Numlecteur	='$num'";
+  $query = $con->prepare($sql);
+  $query->execute();
+  $fetch = $query->fetch();
 
-      $Categorie = $fetch["Libelcateg"];
-      
-      $find = "SELECT * FROM typeabonnement WHERE Categorie = '$Categorie'";
-      $res = $con->prepare($find);
-      $res->setFetchMode(PDO::FETCH_ASSOC);
-      $res->execute();
-      $tab = $res->fetchAll();
-      for ($i=0;$i<count($tab);$i++) {
-        if($tab[$i]["Libeltypeab"] == $Jour AND $tab[$i]["Categorie"] == $Categorie) {
-          $code = $tab[$i]["Codetypeab"];
-        }
-        if($tab[$i]["Libeltypeab"] == $Anne AND $tab[$i]["Categorie"] == $Categorie) {
-          $code = $tab[$i]["Codetypeab"];
-        }
-        if($tab[$i]["Libeltypeab"] == $Men AND $tab[$i]["Categorie"] == $Categorie) {
-          $code = $tab[$i]["Codetypeab"];
-        }
-      }
-      $sel = "SELECT * FROM abonnement WHERE Numlecteur = '$num'";
-      $rl = $con->prepare($sel);
-      $rl->execute();
-      $show = $rl->fetch();
-      $Numlect = $show["Numlecteur"];      
+  $Categorie = $fetch["Libelcateg"];
+  
+  $find = "SELECT * FROM typeabonnement WHERE Categorie = '$Categorie'";
+  $res = $con->prepare($find);
+  $res->setFetchMode(PDO::FETCH_ASSOC);
+  $res->execute();
+  $tab = $res->fetchAll();
+  for ($i=0;$i<count($tab);$i++) {
+    if($tab[$i]["Libeltypeab"] == $Jour AND $tab[$i]["Categorie"] == $Categorie) {
+      $code = $tab[$i]["Codetypeab"];
+    }
+    if($tab[$i]["Libeltypeab"] == $Anne AND $tab[$i]["Categorie"] == $Categorie) {
+      $code = $tab[$i]["Codetypeab"];
+    }
+    if($tab[$i]["Libeltypeab"] == $Men AND $tab[$i]["Categorie"] == $Categorie) {
+      $code = $tab[$i]["Codetypeab"];
+    }
+  }
+  
+  $date = date('j/m/Y');
+  $sel = "SELECT * FROM abonnement WHERE Numlecteur = '$num'";
+  $rl = $con->prepare($sel);
+  $rl->execute();
+  $show = $rl->fetch();
+  @$Numlect = $show["Numlecteur"];      
+  if(!empty($_POST)) {
+    if($Numlect == $num) {
+      echo "L'abonnement est à jour! ";
+    
+    }else {
+      $insert = "INSERT INTO abonnement ( Codetypeab, Datej, Numlecteur) 
+      VALUES(:code, :datej,:num)";
+      $queryi = $con->prepare($insert);
+      $queryi->bindValue(":code", $code, PDO::PARAM_STR);
+      $queryi->bindValue(":datej", $date, PDO::PARAM_STR);
+      $queryi->bindValue(":num", $num, PDO::PARAM_STR);
+      $queryi->execute();
+      // insertion de données dans la table abonnement brut
+      $insert1 = "INSERT INTO abonnementbrut ( Codetypeab, Datej, Numlecteur) 
+      VALUES(:code, :datej,:num)";
+      $queryi1 = $con->prepare($insert1);
+      $queryi1->bindValue(":code", $code, PDO::PARAM_STR);
+      $queryi1->bindValue(":datej", $date, PDO::PARAM_STR);
+      $queryi1->bindValue(":num", $num, PDO::PARAM_STR);
+      $queryi1->execute();
 
-      if($Numlect = $num) {
-        echo "L'abonnement est à jour! ";
-      
-      }else {
-        $insert = "INSERT INTO abonnement ( Codetypeab, Numlecteur) 
-        VALUES(:code, :num)";
-        $queryi = $con->prepare($insert);
-        $queryi->bindValue(":code", $code, PDO::PARAM_STR);
-        $queryi->bindValue(":num", $num, PDO::PARAM_STR);
-        $queryi->execute();
-      }
+      echo "L'abonnement est mise à jour!";
+    }
+  }
     
 ?>
 

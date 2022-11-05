@@ -176,7 +176,7 @@ $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
                                     <td><?= $donnees["Sexe"];?></td>
                                 
                                     <?php $Numlecteur = $donnees["Numlecteur"]; ?>
-                                    <?php $abon = $con->query("SELECT * FROM abonnement WHERE Numlecteur = '$Numlecteur'")->fetchAll(); ?>
+                                    <?php $abon = $con->query("SELECT * FROM abonnementbrut WHERE Numlecteur = '$Numlecteur'")->fetchAll(); ?>
                                     <?php foreach($abon as $abons) : ?>
                                     <?php endforeach; ?>
                                     <?php $code = $abons["Codetypeab"];?>
