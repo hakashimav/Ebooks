@@ -31,12 +31,15 @@
   for ($i=0;$i<count($tab);$i++) {
     if($tab[$i]["Libeltypeab"] == $Jour AND $tab[$i]["Categorie"] == $Categorie) {
       $code = $tab[$i]["Codetypeab"];
+      $val = $tab[$i]["Validite"];
     }
     if($tab[$i]["Libeltypeab"] == $Anne AND $tab[$i]["Categorie"] == $Categorie) {
       $code = $tab[$i]["Codetypeab"];
+      $val = $tab[$i]["Validite"];
     }
     if($tab[$i]["Libeltypeab"] == $Men AND $tab[$i]["Categorie"] == $Categorie) {
       $code = $tab[$i]["Codetypeab"];
+      $val = $tab[$i]["Validite"];
     }
   }
   
@@ -66,6 +69,13 @@
       $queryi1->bindValue(":datej", $date, PDO::PARAM_STR);
       $queryi1->bindValue(":num", $num, PDO::PARAM_STR);
       $queryi1->execute();
+
+      $go = "INSERT INTO compteur ( Validite, Numlecteur)
+      VALUES(:val, :lect)";
+      $bign = $con->prepare($go);
+      $bign->bindValue(":val", $val, PDO::PARAM_STR);
+      $bign->bindValue(":lect", $num, PDO::PARAM_STR);
+      $bign->execute();
 
       echo "L'abonnement est mise à jour!";
     }
