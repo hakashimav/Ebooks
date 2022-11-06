@@ -1,6 +1,5 @@
 <?php  
   session_start();
-
   @$Jour = $_POST["Cate_Jour"];
   @$Anne = $_POST["Cate_Annuel"];
   @$Men = $_POST["Cate_Mensuel"];

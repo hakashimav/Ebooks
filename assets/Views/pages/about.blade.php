@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <?php 
+  session_start();
     include '../layout/app1.blade.php';
   ?>
   <body>

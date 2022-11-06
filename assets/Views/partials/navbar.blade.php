@@ -1,4 +1,4 @@
-
+<?php      require '../../app/compteur.php';?>
  <!-- ======= Header ======= -->
  <header id="header" class="d-flex align-items-center">
     <div class="container  justify-content-between">

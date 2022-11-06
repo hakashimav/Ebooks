@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  require 'compteur.php';
 if(!isset($_SESSION["User"])) {
   header("Location: errors/404.php");
   exit;

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $waiting_day = 1637210196;
 $time_left = time() - $waiting_day ;
@@ -15,35 +14,35 @@ $time_left %= 60;
 
 $sec = $time_left;
 
-include_once 'connexion.php';
+include 'connexion.php';
 
 $Id = $_SESSION["User"]["id"];
 if ( $_SESSION["User"]) {
-$req = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
-$quer = $con->prepare($req);
-$quer->execute();
+$reqS = "SELECT * FROM lecteur WHERE 	Iduser = '$Id'";
+$querS = $con->prepare($reqS);
+$querS->execute();
 
-$lect = $quer->fetch();
+$lect = $querS->fetch();
 $num = $lect["Numlecteur"];
 
-$sql = "SELECT * FROM compteur WHERE Numlecteur = '$num'";
-$query = $con->prepare($sql);
-$query->execute();
-$fetch = $query->fetch();
+$sqlS = "SELECT * FROM compteur WHERE Numlecteur = '$num'";
+$queryS = $con->prepare($sqlS);
+$queryS->execute();
+$fetch = $queryS->fetch();
 
 $comp = $fetch["Idcompt"];
 $Val = $fetch["Validite"];
 
 $res = $Val - $hours;
-if($res == 0) {
-$insert = "UPDATE compteur SET Validite = '$res' WHERE Idcompt = '$comp'";
-$quer = $con->prepare($insert);
-$quer->execute();
+if($res > 0) {
+$insertS = "UPDATE compteur SET Validite = '$res' WHERE Idcompt = '$comp'";
+$quer1S = $con->prepare($insertS);
+$quer1S->execute();
 }
-$sql1 = "SELECT * FROM compteur WHERE Numlecteur = '$num'";
-$query1 = $con->prepare($sql);
-$query1->execute();
-$fetch1 = $query1->fetch();
+$sql1S = "SELECT * FROM compteur WHERE Numlecteur = '$num'";
+$query1S = $con->prepare($sql1S);
+$query1S->execute();
+$fetch1 = $query1S->fetch();
 
 $Val1 = $fetch1["Validite"];
 
@@ -51,7 +50,10 @@ if ($Val1 == 0) {
 
     $del = " DELETE FROM abonnement WHERE Numlecteur ='$num'";
     $ok = $con->prepare($del);
-    $ok->execute(); 
+    $ok->execute();
+    $sup = "DELETE FROM compteur WHERE Numlecteur = '$num'" ;
+    $va= $con->prepare($sup);
+    $va->execute();
 }
 
 }

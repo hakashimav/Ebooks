@@ -2,6 +2,7 @@
 //deémarrage de la session User dans PHP
 session_start(); 
 //quand l'utilisateur n'est pas connecté alors renvois
+require 'compteur.php';
 if(!isset($_SESSION["User"])) {
     header("Location: errors/404.php");
     exit;
@@ -82,7 +83,7 @@ $Commune = $Ad["Commune"];
     <body>
         <div class="container-fluid">
             <!-- Nom d'utilisateur connecté -->
-            <h2>Profil de : <?= $_SESSION["User"]["name"]?></h2>
+            <h2>Profil de :<a href="index.php" title="Retour à l'accueil"> <?= $_SESSION["User"]["name"]?></a></h2>
             <div class="container-infos">
                 <span></span>
             </div>

@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 if(!isset($_SESSION["User"])) {
   header("Location: ../../app/errors/404.php");
   exit;
