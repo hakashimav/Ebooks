@@ -2,7 +2,6 @@
 //deémarrage de la session User dans PHP
 session_start(); 
 //quand l'utilisateur n'est pas connecté alors renvois
-require 'compteur.php';
 if(!isset($_SESSION["User"])) {
     header("Location: errors/404.php");
     exit;
