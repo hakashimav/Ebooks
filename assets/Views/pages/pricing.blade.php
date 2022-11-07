@@ -13,6 +13,7 @@
   $quer->execute();
   
   $lect = $quer->fetch();
+  if($lect == true ) {
   $num = $lect["Numlecteur"];
   
   $sql = "SELECT * FROM categorielecteur WHERE Numlecteur	='$num'";
@@ -79,7 +80,7 @@
       echo "L'abonnement est mise à jour!";
     }
   }
-    
+}
 ?>
 
 <!DOCTYPE html>
