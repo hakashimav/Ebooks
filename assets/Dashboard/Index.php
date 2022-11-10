@@ -36,6 +36,7 @@ $query3->execute();
 $Ouvrage = $query3->rowCount();
 
 $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
+$consult =  $con->query("SELECT * FROM consultation")->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -193,7 +194,24 @@ $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
                     </table>
                 </div>
 
-                
+                <!-- New customers -->
+                <div class="recentCustomers" data-aos="slide-left">
+                    <div class="cardHeader">
+                        <h2>Recent Customers</h2>
+                    </div>
+                    <table>                       
+                    <?php foreach($consult as $donnees) : ?>
+                        <?php $num = $donnees["Numlecteur"];?>
+                        <?php $sel = $con->query("SELECT * FROM lecteur WHERE Numlecteur = '$num'")->fetchAll(); ?>
+                        <?php foreach($sel as $donnes) : ?>
+                        <tr>
+                            <td width="60px"><ion-icon name="person-outline"></td>
+                            <td><h4><?= $donnes["Nom"];?><br><span><?= $donnes["Postnom"];?></span></h4></td>
+                            <?php endforeach;?>
+                        </tr>
+                    <?php endforeach;?>
+                    </table>
+                </div>
             </div>
         </div>
 
