@@ -156,7 +156,6 @@ $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
                 <div class="recentOrders" data-aos="fade-right">
                     <div class="cardHeader">
                         <h2>Liste générale des lecteurs</h2>
-                        <a href="" class="btn">View All</a>
                     </div>
                     <table>
                         <thead>
@@ -194,38 +193,7 @@ $lecteur =  $con->query("SELECT * FROM Lecteur")->fetchAll();
                     </table>
                 </div>
 
-                <!-- New customers -->
-                <div class="recentCustomers" data-aos="slide-left">
-                    <div class="cardHeader">
-                        <h2>Recent Customers</h2>
-                    </div>
-                    <table>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Mohamed<br><span>Italy</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Clark<br><span>France</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Mark<br><span>Span</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Joshep<br><span>USA</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Ben<br><span>Egypte</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBx"><img src="user.jpg" alt=""></div></td>
-                            <td><h4>Alex<br><span>Syrie</span></h4></td>
-                        </tr>
-                    </table>
-                </div>
+                
             </div>
         </div>
 

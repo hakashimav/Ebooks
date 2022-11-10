@@ -5,6 +5,24 @@ if(!isset($_SESSION["User"])) {
   header("Location: errors/404.php");
   exit;
 }
+$id = $_SESSION["User"]["id"];
+include 'connexion.php';
+$req = "SELECT * FROM lecteur WHERE Iduser = '$id'";
+$quer = $con->prepare($req);
+$quer->execute();
+$array = $quer->fetch();
+
+$numlec = $array["Numlecteur"];
+$date = date('j/m/Y');
+$heur = date('H:i:s');
+
+$sql = "INSERT INTO consultation (heureconsul, Iddate, Numlecteur)
+VALUES (:heur, :datej, :num)";
+$query = $con->prepare($sql);
+$query->bindValue(":heur", $heur, PDO::PARAM_STR);
+$query->bindValue(":datej", $date, PDO::PARAM_STR);
+$query->bindValue(":num", $numlec, PDO::PARAM_STR);
+$query->execute();
 ?>
 
 <!DOCTYPE html>
